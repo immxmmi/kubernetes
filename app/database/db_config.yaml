@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: cldinf-app
+  labels:
+    app: cldinf-db
+data:
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: postgres
+  POSTGRES_USER: admindb
+  POSTGRES_PASSWORD: admindb
+

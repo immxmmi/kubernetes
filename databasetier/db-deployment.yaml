@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cldinf-deployment
+  namespace: cldinf-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cldinf-db
+  template:
+    metadata:
+      labels:
+        app: cldinf-db
+    spec:
+      containers:
+        - name: cldinf-database
+          image: postgres:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          volumeMounts:
+            - mountPath: /mnt/data
+              name: postgredb
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: pvc-cldinf-app

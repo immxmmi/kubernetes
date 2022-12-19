@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: cldinf-app
+  name: cldinf-api
+  labels:
+    app: cldinf-api
+spec: 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  selector:
+    app: cldinf-api
+    tier: backend
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: cldinf-app
+  name: cldinf-api
+  labels:
+    app: cldinf-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cldinf-api
+  template:
+    metadata:
+        labels:
+          app: cldinf-api
+    spec:
+      containers:
+        - name: cldinf-api
+          image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/usr/sbin/nginx", "-s", "quit"]
+          ports:
+            - name: http
+              containerPort: 8000
+      imagePullSecrets:
+        - name: regcred
+

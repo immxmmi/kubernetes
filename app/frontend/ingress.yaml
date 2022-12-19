@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cldinf-ingress
+  namespace: cldinf-app
+spec:
+  rules:
+  - host: cldinf-k8s-g5.network.garden
+    http:
+      paths:
+      - path: /mnt/data
+        pathType: Prefix
+        backend:
+          service:
+            name: cldinf-web
+            port:
+              number: 80
