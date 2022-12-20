@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: cldinf-api
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-app.cldinf-api.ch
+    external-dns.alpha.kubernetes.io/hostname: cldinf-api.k8s.cldinf-k8s.g5.network.garden
   namespace: cldinf-app
   labels:
     app: cldinf-api
