@@ -34,6 +34,9 @@ spec:
     spec:
       containers:
         - name: cldinf-api
+          env:
+          - name: DEMO_GREETING
+            value: "Hello from the environment"
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
           lifecycle:
             preStop:
