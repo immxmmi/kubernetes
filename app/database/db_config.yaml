@@ -6,11 +6,8 @@ metadata:
   labels:
     app: cldinf-db
 data:
-  PG_DATABASE: postgres
-  PG_HOST: postgres
-  PG_PORT: 5432
-  PG_USER: admindb
-  PG_PASSWORD: admindb
-  LOG_PATH: '/tmp/cldinf-tta.log'
-
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: postgres
+  POSTGRES_USER: admindb
+  POSTGRES_PASSWORD: admindb
 
