@@ -14,7 +14,7 @@ kubectl get pods --namespace cldinf-app
 echo "| - - - ingress - - - |"
 kubectl get ingress -n cldinf-app
 echo "| - - - LOGS - API - - - |"
-kubectl get logs -n cldinf-app cldinf-api-6d8f675677-lkn64
+kubectl logs -n cldinf-app cldinf-api-6d8f675677-lkn64
 echo "| - - - LOGS - DATABASE - - - |"
-kubectl get logs -n cldinf-app cldinf-db-0
+kubectl logs -n cldinf-app cldinf-db-0
 
