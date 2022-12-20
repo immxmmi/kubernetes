@@ -11,4 +11,5 @@ data:
   PG_DATABASE: postgres
   PG_HOST: postgres
   PG_PORT: '5432'
+  LOG_PATH: /tmp/cldinf-tta.log
 
