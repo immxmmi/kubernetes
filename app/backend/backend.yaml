@@ -35,13 +35,11 @@ spec:
       containers:
         - name: cldinf-api
           env:
-          - name: DEBUG
-            value: "true"
-          - name: PG_HOST
+           - name: PG_USER
              valueFrom:
                configMapKeyRef:
                  name: db-config
-                 key: PG_HOST         
+                 key: PG_USER
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
           lifecycle:
             preStop:
