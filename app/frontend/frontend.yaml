@@ -65,11 +65,11 @@ spec:
                configMapKeyRef:
                  name: web-config
                  key: API_PORT
-           - name: DEBUGE
+           - name: DEBUG
              valueFrom:
                configMapKeyRef:
                  name: api-config
-                 key: DEBUGE
+                 key: DEBUG   
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/web:1.0.0
           lifecycle:
             preStop:
