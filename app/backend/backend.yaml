@@ -37,6 +37,23 @@ spec:
           env:
           - name: DEBUG
             value: "true"
+          - name: POSTGRES_HOST
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: POSTGRES_HOST         
+           - name: POSTGRES_USER
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: POSTGRES_USER
+           - name: POSTGRES_PASSWORD
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: POSTGRES_PASSWORD 
+
+
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
           lifecycle:
             preStop:
