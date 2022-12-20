@@ -4,7 +4,7 @@ metadata:
   name: cldinf-backend-ingress
   namespace: cldinf-app
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-app.cldinf-db.ch
+    external-dns.alpha.kubernetes.io/hostname: cldinf-app.cldinf-api.ch
 spec:
   ingressClassName: nginx-public
   tls:
