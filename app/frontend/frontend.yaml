@@ -10,6 +10,9 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+    - protocol: TCP
+      port: 443
+      targetPort: 8080
   externalIPs:
   - 10.18.8.200
   selector:
@@ -62,6 +65,11 @@ spec:
                configMapKeyRef:
                  name: web-config
                  key: API_PORT
+           - name: DEBUGE
+             valueFrom:
+               configMapKeyRef:
+                 name: api-config
+                 key: DEBUGE
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/web:1.0.0
           lifecycle:
             preStop:
