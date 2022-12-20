@@ -40,6 +40,8 @@ spec:
                configMapKeyRef:
                  name: db-config
                  key: PG_USER
+            - name: DEBUG
+              value: "true"
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
           lifecycle:
             preStop:
