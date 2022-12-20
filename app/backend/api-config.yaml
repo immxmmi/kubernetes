@@ -6,5 +6,5 @@ metadata:
   labels:
     app: cldinf-api
 data:
-  DEBUG: true
+  DEBUG: "true"
   LOG_PATH: /tmp/cldinf-tta.log
