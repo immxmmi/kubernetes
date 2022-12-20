@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+  namespace: cldinf-app
+  labels:
+    app: cldinf-api
+data:
+  DEBUG: true
+  LOG_PATH: /tmp/cldinf-tta.log
