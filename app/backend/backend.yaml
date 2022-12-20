@@ -63,7 +63,7 @@ spec:
            - name: LOG_PATH
              valueFrom:
                configMapKeyRef:
-                 name: db-config
+                 name: api-config
                  key: LOG_PATH                                                               
            - name: DEBUG
              value: "true"
