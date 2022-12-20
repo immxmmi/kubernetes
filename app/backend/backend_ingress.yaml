@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cldinf-backend-ingress
+  name: cldinf-api-internal
   namespace: cldinf-app
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-app.cldinf-api.ch
+    external-dns.alpha.kubernetes.io/hostname: cldinf-app.cldinf-api.local
 spec:
-  ingressClassName: nginx-public
+  ingressClassName: nginx-private
   tls:
   - hosts:
-    - cldinf-app.cldinf-api.ch
+    - cldinf-app.cldinf-api.local
     secretName: cldinf-api-tls
   rules:
-  - host: cldinf-app.cldinf-api.ch
+  - host: cldinf-app.cldinf-api.local
     http:
       paths:
       - path: /mnt/data
