@@ -32,10 +32,14 @@ spec:
   selector:
     matchLabels:
       app: cldinf-web
+      tier: frontend
+      track: stable
   template:
     metadata:
         labels:
           app: cldinf-web
+          tier: frontend
+          track: stable
     spec:
       containers:
         - name: cldinf-web
