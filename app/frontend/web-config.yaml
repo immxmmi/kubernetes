@@ -9,8 +9,5 @@ data:
   PORT: '8080'
   MODULE_NAME: cldinf
   GROUPE_NAME: g5
-  API_HOST: cldinf-db.cldinf-app.svc.cluster.local
-  API_PORT: '8080'
-
-
-
+  API_HOST: cldinf-api.cldinf-app.svc.cluster.local
+  API_PORT: '8000'
