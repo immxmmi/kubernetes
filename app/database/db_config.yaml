@@ -10,5 +10,5 @@ data:
   PG_PASSWORD: admindb
   PG_DATABASE: postgres
   PG_HOST: postgres
-  PG_PORT: 5432
+  PG_PORT: '5432'
 
