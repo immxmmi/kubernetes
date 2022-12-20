@@ -5,7 +5,7 @@ metadata:
   name: cldinf-ingress-backend
 spec:
   rules:
-  - host: "10.105.227.5"
+  - host: cldinf-app.cldinf-api
     http:
       paths:
       - pathType: Prefix
