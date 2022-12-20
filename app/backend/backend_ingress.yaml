@@ -4,7 +4,7 @@ metadata:
   name: cldinf-api-internal
   namespace: cldinf-app
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-api.k8s.cldinf-k8s.g5.network.garden
+    external-dns.alpha.kubernetes.io/target: 192.168.85.230
 spec:
   ingressClassName: nginx-private
   tls:
