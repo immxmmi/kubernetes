@@ -6,8 +6,8 @@ metadata:
   labels:
     app: cldinf-db
 data:
-  POSTGRES_DB: postgres
-  POSTGRES_HOST: postgres
-  POSTGRES_USER: admindb
-  POSTGRES_PASSWORD: admindb
+  PG_DB: postgres
+  PG_HOST: postgres
+  PG_USER: admindb
+  PG_PASSWORD: admindb
 
