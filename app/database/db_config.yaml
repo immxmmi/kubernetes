@@ -6,8 +6,9 @@ metadata:
   labels:
     app: cldinf-db
 data:
-  PG_DB: postgres
-  PG_HOST: postgres
   PG_USER: admindb
   PG_PASSWORD: admindb
+  PG_DATABASE: postgres
+  PG_HOST: postgres
+  PG_PORT: 5432
 
