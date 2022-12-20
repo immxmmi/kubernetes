@@ -41,6 +41,26 @@ spec:
                configMapKeyRef:
                  name: db-config
                  key: PG_PASSWORD
+           - name: PG_DATABASE
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: PG_DATABASE
+           - name: PG_HOST
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: PG_HOST
+           - name: PG_PORT
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: PG_PORT
+           - name: LOG_PATH
+             valueFrom:
+               configMapKeyRef:
+                 name: db-config
+                 key: LOG_PATH  
           ports:
             - containerPort: 5432
               name: postgres
