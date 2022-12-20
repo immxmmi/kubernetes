@@ -1,4 +1,4 @@
 echo "delete all"
 kubectl delete -f database.yaml
 echo "delete config Map"
-kubectl delete -f db-config.yaml
+kubectl delete -f configmap db-config
