@@ -4,7 +4,7 @@ metadata:
   name: cldinf-web
   namespace: cldinf-app
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-k8s-g5.network.garden
+    external-dns.alpha.kubernetes.io/target: 10.18.8.200
 spec:
   ingressClassName: nginx-public
   tls:

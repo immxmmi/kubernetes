@@ -5,6 +5,8 @@ metadata:
   name: cldinf-web
   labels:
     app: cldinf-web
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: cldinf-k8s-g5.network.garden
 spec: 
   ports:
     - protocol: TCP
