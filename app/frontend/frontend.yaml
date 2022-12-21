@@ -10,12 +10,10 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
- # externalIPs:
- # - 10.18.8.200
   selector:
     app: cldinf-web
     tier: frontend
-  type: LoadBalancer
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
