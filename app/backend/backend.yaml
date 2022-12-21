@@ -81,7 +81,7 @@ spec:
                 command: ["/usr/sbin/nginx", "-s", "quit"]
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 80
       imagePullSecrets:
         - name: regcred
 
