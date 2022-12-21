@@ -27,10 +27,14 @@ spec:
   selector:
     matchLabels:
       app: cldinf-web
+      tier: frontend
+      track: stable
   template:
     metadata:
         labels:
           app: cldinf-web
+          tier: frontend
+          track: stable
     spec:
       containers:
         - name: cldinf-web
@@ -66,6 +70,7 @@ spec:
               exec:
                 command: ["/usr/sbin/nginx", "-s", "quit"]
           ports:
-            - containerPort: 8080
+            - name: http
+              containerPort: 8080
       imagePullSecrets:
         - name: regcred
