@@ -6,12 +6,15 @@ metadata:
   labels:
     app: cldinf-web
 spec: 
+  type: NodePort
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
+      name: http
     - protocol: TCP
       port: 443
+      name: https
       targetPort: 8080
   externalIPs:
   - 10.18.8.200
