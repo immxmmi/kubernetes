@@ -6,11 +6,12 @@ metadata:
   labels:
     app: cldinf-web
 spec: 
-  type: ClusterIP
+  type: NodePort
   selector:
     app: cldinf-web
     tier: frontend
-    track: stable   
+    track: stable
+    app.kubernetes.io/name: cldinf-web     
   ports:
     - name: http
       protocol: TCP
