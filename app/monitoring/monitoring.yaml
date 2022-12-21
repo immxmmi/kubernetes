@@ -4,7 +4,7 @@ metadata:
   labels:
     test: liveness
   name: liveness-http
-spec:s
+spec:
   containers:
   - name: liveness
     image: registry.k8s.io/liveness
@@ -13,7 +13,7 @@ spec:s
     livenessProbe:
       httpGet:
         path: /healthz
-        port: 8080
+        port: 8000
         httpHeaders:
         - name: Custom-Header
           value: Awesome
