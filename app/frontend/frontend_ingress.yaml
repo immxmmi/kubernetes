@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata: 
-  name: cldinf-ingress
+  name: cldinf-web
   namespace: cldinf-app
 spec:
   ingressClassName: nginx-public
