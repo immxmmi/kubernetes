@@ -1,18 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  namespace: cldinf-app
   labels:
-    app: cldinf-monitoring
+    test: liveness
   name: liveness-http
 spec:
-  imagePullSecrets:
-    - name: regcred
   containers:
-    image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
+  - args:
+    - /server
+    image: gcr.io/google_containers/liveness
     livenessProbe:
       httpGet:
         path: /healthz
         port: 8080
-      initialDelaySeconds: 3
-      periodSeconds: 3
+        httpHeaders:
+          - name: X-Custom-Header
+            value: Awesome
+      initialDelaySeconds: 15
+      timeoutSeconds: 1
+    name: liveness
