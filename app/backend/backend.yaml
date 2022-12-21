@@ -6,16 +6,14 @@ metadata:
   labels:
     app: cldinf-api
 spec: 
-  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
   selector:
     app: cldinf-api
     tier: backend
-    track: stable
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 8000
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
