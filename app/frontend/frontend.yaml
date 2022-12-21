@@ -13,7 +13,7 @@ spec:
   selector:
     app: cldinf-web
     tier: frontend
-  type: NodePort
+  type: ClusterPort
 ---
 apiVersion: apps/v1
 kind: Deployment
