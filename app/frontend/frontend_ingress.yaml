@@ -1,8 +1,10 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadata: 
+metadata:
   name: cldinf-web
   namespace: cldinf-app
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: cldinf-k8s-g5.network.garden
 spec:
   ingressClassName: nginx-public
   tls:
@@ -13,7 +15,10 @@ spec:
   - host: cldinf-k8s-g5.network.garden
     http:
       paths:
-      - path: /
+      - path: /mnt/data
+        pathType: Prefix
         backend:
-            serviceName: cldinf-api
-            servicePort: 80
+          service:
+            name: cldinf-web
+            port:
+              number: 80
