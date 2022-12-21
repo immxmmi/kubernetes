@@ -1,6 +1,6 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
-metadata:
+metadata: 
   name: cldinf-ingress
   namespace: cldinf-app
 spec:
