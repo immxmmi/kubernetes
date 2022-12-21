@@ -7,12 +7,14 @@ metadata:
     app: cldinf-web
 spec: 
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 8080
   selector:
     app: cldinf-web
     tier: frontend
+    track: stable    
   type: ClusterIP
 ---
 apiVersion: apps/v1
