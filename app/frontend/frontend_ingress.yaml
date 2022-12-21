@@ -19,6 +19,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: cldinf-web
+            name: cldinf-api
             port:
               number: 80
