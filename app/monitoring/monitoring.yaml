@@ -4,7 +4,7 @@ metadata:
   labels:
     test: liveness
   name: liveness-http
-spec:
+spec:s
   containers:
   - name: liveness
     image: registry.k8s.io/liveness

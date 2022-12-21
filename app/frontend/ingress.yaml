@@ -3,20 +3,17 @@ kind: Ingress
 metadata:
   name: cldinf-ingress
   namespace: cldinf-app
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: cldinf-k8s-g5.network.garden
 spec:
-  ingressClassName: nginx-public
+  ingressClassName: nginx
   tls:
   - hosts:
     - cldinf-k8s-g5.network.garden
     secretName: cldinf-web-tls
   rules:
-  - host: cldinf-k8s-g5.network.garden
-    http:
+  - http:
       paths:
-      - path: /mnt/data
-        pathType: Prefix
+      - pathType: Prefix
+        path: "/"
         backend:
           service:
             name: cldinf-web
