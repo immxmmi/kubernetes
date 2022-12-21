@@ -27,10 +27,14 @@ spec:
   selector:
     matchLabels:
       app: cldinf-api
+      tier: backend
+      track: stable
   template:
     metadata:
         labels:
           app: cldinf-api
+          tier: backend
+          track: stable
     spec:
       containers:
         - name: cldinf-api
@@ -63,10 +67,13 @@ spec:
            - name: LOG_PATH
              valueFrom:
                configMapKeyRef:
-                 name: db-config
-                 key: LOG_PATH                                                               
+                 name: api-config
+                 key: LOG_PATH
            - name: DEBUG
-             value: "true"
+             valueFrom:
+               configMapKeyRef:
+                 name: api-config
+                 key: DEBUG                                                                     
           image: registry.gitlab.ost.ch:45023/ins-stud/cldinf/resources/api:1.0.0
           lifecycle:
             preStop:
