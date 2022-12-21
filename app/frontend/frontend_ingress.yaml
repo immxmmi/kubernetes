@@ -16,9 +16,7 @@ spec:
     http:
       paths:
       - path: /mnt/data
-        pathType: Prefix
         backend:
           service:
-            name: cldinf-web
-            port:
-              number: 80
+            servicePort: cldinf-web
+            servicePort: 80
