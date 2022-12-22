@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: myliveness-pod
 spec:
+    hostIP: 172.17.0.1
   containers:
   - image: httpd:2.4
     imagePullPolicy: IfNotPresent
@@ -11,7 +12,6 @@ spec:
     ports:
     - name: liveness-port
       containerPort: 80
-      hostIP: 172.17.0.1
       hostPort: 8000
     livenessProbe:
       httpGet:
