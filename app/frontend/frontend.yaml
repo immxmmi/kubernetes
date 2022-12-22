@@ -50,11 +50,11 @@ spec:
                configMapKeyRef:
                  name: web-config
                  key: MODULE_NAME
-           - name: GROUP_NAME
+           - name: GROUPE_NAME
              valueFrom:
                configMapKeyRef:
                  name: web-config
-                 key: GROUP_NAME
+                 key: GROUPE_NAME
            - name: API_HOST
              valueFrom:
                configMapKeyRef:
@@ -73,12 +73,5 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "200m"
-            limits:
-              memory: "128Mi"
-              cpu: "400m"
       imagePullSecrets:
         - name: regcred
