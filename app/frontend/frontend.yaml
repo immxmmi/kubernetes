@@ -80,5 +80,6 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "400m"
+      restartPolicy: Always
       imagePullSecrets:
         - name: regcred
