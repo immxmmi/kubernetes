@@ -1,17 +1,23 @@
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: liveness-probe-demo
+  name: myliveness-pod
 spec:
   containers:
-  - name: liveness-probe-demo
-    image: k8s.gcr.io/goproxy:0.1
+  - image: httpd:2.4
+    imagePullPolicy: IfNotPresent
+    name: myliveness-container
+
+    command: ['sh', '-c', 'echo Container 1 is Running ; sleep 3600']
+
     ports:
-    - containerPort: 8080
+    - name: liveness-port
+      containerPort: 80
+      hostPort: 8080
+
     livenessProbe:
-    tcpSocket:
-        port: 8080
-    initialDelaySeconds: 5
-    periodSeconds: 15
-    failureThreshold: 1
+      httpGet:
+        path: /healthz
+        port: 80
+      initialDelaySeconds: 2
+      periodSeconds: 10
