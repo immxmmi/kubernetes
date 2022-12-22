@@ -63,9 +63,6 @@ spec:
           volumeMounts:
             -  name: postgre-storge
                mountPath: /var/lib/postgresql/data
-      restartPolicy: Always
-   #   nodeSelector:
-   #     failure-domain.beta.kubernetes.io/zone: "2"      
       volumes:
         - name: postgre-storge
           persistentVolumeClaim:
