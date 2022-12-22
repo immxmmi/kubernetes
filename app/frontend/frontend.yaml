@@ -50,11 +50,11 @@ spec:
                configMapKeyRef:
                  name: web-config
                  key: MODULE_NAME
-           - name: GROUPE_NAME
+           - name: GROUP_NAME
              valueFrom:
                configMapKeyRef:
                  name: web-config
-                 key: GROUPE_NAME
+                 key: GROUP_NAME
            - name: API_HOST
              valueFrom:
                configMapKeyRef:
