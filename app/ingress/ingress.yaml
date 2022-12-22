@@ -19,10 +19,4 @@ spec:
             name: cldinf-web
             port:
               number: 80
-      - pathType: Prefix
-        path: /healthz
-        backend:
-          service:
-            name: cldinf-web
-            port:
-              number: 80
+              
