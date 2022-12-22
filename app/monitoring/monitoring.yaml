@@ -7,15 +7,13 @@ metadata:
 spec:
   containers:
   - name: liveness
-    image: registry.k8s.io/liveness
-    args:
-    - /server
+    image: registry.k8s.io/liveness:0.1
     livenessProbe:
       httpGet:
-        path: /healthz
+        path: /health
         port: 8080
         httpHeaders:
         - name: Custom-Header
-          value: Awesome
-      initialDelaySeconds: 3
-      periodSeconds: 3
+          value: ItsAlive
+      initialDelaySeconds: 5
+      periodSeconds: 5
