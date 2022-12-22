@@ -1,19 +1,17 @@
+
 apiVersion: v1
 kind: Pod
 metadata:
-  labels:
-    test: liveness
-  name: liveness-http
+  name: liveness-probe-demo
 spec:
   containers:
-  - name: liveness
-    image: registry.k8s.io/liveness:0.1
+  - name: liveness-probe-demo
+    image: k8s.gcr.io/goproxy:0.1
+    ports:
+    - containerPort: 8080
     livenessProbe:
-      httpGet:
-        path: /health
+    tcpSocket:
         port: 8080
-        httpHeaders:
-        - name: Custom-Header
-          value: ItsAlive
-      initialDelaySeconds: 5
-      periodSeconds: 5
+    initialDelaySeconds: 5
+    periodSeconds: 15
+    failureThreshold: 1
