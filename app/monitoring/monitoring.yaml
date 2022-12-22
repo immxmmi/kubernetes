@@ -16,6 +16,6 @@ spec:
         port: 8080
         httpHeaders:
           - name: X-Custom-Header
-            value: Awesome
+            value: allgood
       initialDelaySeconds: 3
       periodSeconds: 3
