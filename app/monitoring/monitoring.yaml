@@ -16,6 +16,6 @@ spec:
         port: 8000
         httpHeaders:
         - name: Custom-Header
-          value: Awesome
+          value: Allgood
       initialDelaySeconds: 3
       periodSeconds: 3
