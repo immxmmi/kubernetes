@@ -9,14 +9,13 @@ spec:
     name: myliveness-container
 
     command: ['sh', '-c', 'echo Container 1 is Running ; sleep 3600']
-
     ports:
     - name: liveness-port
-      containerPort: 80
+      containerPort: 8000
       hostPort: 8000
     livenessProbe:
       httpGet:
         path: /healthz
-        port: 80
+        port: 8000
       initialDelaySeconds: 2
       periodSeconds: 10
