@@ -31,7 +31,7 @@ spec:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
-      - key: node-role.kubernetes.io/master
+      - key: node-role.kubernetes.io/worker-1
         operator: Exists
         effect: NoSchedule
       containers:
