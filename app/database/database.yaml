@@ -28,6 +28,9 @@ spec:
         app: cldinf-db
     spec:
       tolerations:
+      - key: node-role.kubernetes.io/hostname=cldinf-k8s-g5-w1
+        operator: Exists
+        effect: NoSchedule
       - key: node-role.kubernetes.io/worker-1
         operator: Exists
         effect: NoSchedule
