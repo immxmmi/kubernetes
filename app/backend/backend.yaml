@@ -13,7 +13,7 @@ spec:
   selector:
     app: cldinf-api
     tier: backend
-  type: ClusterIP
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
