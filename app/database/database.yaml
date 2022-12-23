@@ -28,8 +28,7 @@ spec:
         app: cldinf-db
     spec:
       nodeSelector: 
-        kubernetes.io/hostname=cldinf-k8s-g5-w1
-        kubernetes.io/role=worker-1
+        region: east
         type: user-node
       containers:
         - name: cldinf-database
