@@ -29,13 +29,14 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
               - key: disktype
                 operator: In
                 values:
-                - ssd   
+                - ssd 
       containers:
         - name: cldinf-database
           image: postgres:9.6.2
