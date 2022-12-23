@@ -27,16 +27,6 @@ spec:
       labels:
         app: cldinf-db
     spec:
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: disktype
-                operator: In
-                values:
-                - ssd 
       containers:
         - name: cldinf-database
           image: postgres:9.6.2
