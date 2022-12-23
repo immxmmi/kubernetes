@@ -63,7 +63,14 @@ spec:
           volumeMounts:
             -  name: postgre-storge
                mountPath: /var/lib/postgresql/data
-      restartPolicy: Always   
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      restartPolicy: Always 
       volumes:
         - name: postgre-storge
           persistentVolumeClaim:
