@@ -6,7 +6,7 @@ metadata:
   labels:
     app: cldinf-db
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 5432
       targetPort: 5432
@@ -27,8 +27,6 @@ spec:
       labels:
         app: cldinf-db
     spec:
-      nodeSelector: 
-        region: east
       containers:
         - name: cldinf-database
           image: postgres:9.6.2
