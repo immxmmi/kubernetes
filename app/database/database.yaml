@@ -29,7 +29,6 @@ spec:
     spec:
       nodeSelector: 
         region: east
-        type: user-node
       containers:
         - name: cldinf-database
           image: postgres:9.6.2

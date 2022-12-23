@@ -36,8 +36,6 @@ spec:
           tier: backend
           track: stable
     spec:
-      nodeSelector: 
-        region: east
       containers:
         - name: cldinf-api
           env:
